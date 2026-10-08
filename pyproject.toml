@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "organoid-ops"
+version = "1.0.0"
+description = "Protocol, plate, and assay window for a neural organoid run."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Choppa Devasai Pranatheswar" }]
+dependencies = []
+
+[project.scripts]
+organoid-ops = "organoid_ops.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Status:** problem brief. The question and the measurement are written here. An implementation is not in this repository yet.
+**Status:** runnable on designed examples. Not a clinical system, a LIMS, or a trained model.
 
 </div>
 
@@ -18,7 +18,7 @@
   <img src="docs/demo.gif" alt="organoid-ops" width="880"/>
 </p>
 
-The clip plays on this page. [Full video](docs/demo.mp4).
+The clip is `python -m organoid_ops`, the program in this repository. [Full video](docs/demo.mp4).
 
 ## The problem
 
@@ -39,7 +39,17 @@ Two results are comparable only when those four agree, or when the disagreement 
 
 ## What this repository is
 
-The record a neural-organoid experiment needs before anyone argues about the signal. Nearby work on public neural data lives in [eeg-harmonize](https://github.com/TechieGoku2623/eeg-harmonize) and [neuroprivacy](https://github.com/TechieGoku2623/neuroprivacy). This repository does not include organoid data or a lab system.
+`organoid-ops` compares two run records and refuses a result that does not name its run. It does not include organoid measurements. Public neural data work is in [eeg-harmonize](https://github.com/TechieGoku2623/eeg-harmonize).
+
+## Run
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .
+python -m organoid_ops
+python -m unittest discover -s tests -v
+```
 
 ## Author
 
