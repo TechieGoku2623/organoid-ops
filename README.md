@@ -12,6 +12,14 @@
 
 ---
 
+## Watch
+
+<p align="center">
+  <img src="docs/demo.gif" alt="organoid-ops" width="880"/>
+</p>
+
+The clip plays on this page. [Full video](docs/demo.mp4).
+
 ## The problem
 
 Neural organoid results are hard to compare because the experiment is not a single object. Media recipe, days in vitro, plating density, and the hour the assay was read all change the biology. Papers compress that into a methods paragraph. The next lab cannot tell whether they repeated the experiment or a cousin of it.
