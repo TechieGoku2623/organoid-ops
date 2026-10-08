@@ -15,10 +15,10 @@
 ## Watch
 
 <p align="center">
-  <img src="docs/demo.gif" alt="organoid-ops" width="880"/>
+  <img src="docs/demo.gif" alt="organoid-ops: two runs on the same plate, then a protocol mismatch" width="880"/>
 </p>
 
-The clip is `python -m organoid_ops`, the program in this repository. [Full video](docs/demo.mp4).
+The clip is the working screen: two runs on the same plate, then the protocol mismatch. [Open the demo](docs/demo.html). [Full video](docs/demo.mp4).
 
 ## The problem
 

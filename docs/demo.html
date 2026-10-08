@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>organoid-ops</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #140e1c; color: #f4ecff; font-family: Inter, system-ui, sans-serif; }
+  body { padding: 28px 36px; display: flex; flex-direction: column; }
+  header { display: flex; justify-content: space-between; align-items: end; margin-bottom: 18px; }
+  h1 { margin: 0; font-size: 32px; letter-spacing: -0.04em; }
+  header p { margin: 0; color: #c9a6ff; }
+  .runs { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  article { background: #1d1528; border: 1px solid #4a3870; border-radius: 18px; padding: 18px 20px 22px; }
+  article.bad { border-color: #e07a68; }
+  h2 { margin: 0 0 6px; font-size: 22px; }
+  .meta { color: #c9a6ff; margin-bottom: 14px; }
+  .plate { display: grid; grid-template-columns: repeat(4, 54px); gap: 10px; }
+  .well { width: 54px; height: 54px; border-radius: 50%; background: #3a2c58; display: flex; align-items: center; justify-content: center; font-size: 13px; }
+  .well.on { background: #c9a6ff; color: #1a1024; font-weight: 700; }
+  .verdict { margin-top: 18px; padding: 16px 18px; border-radius: 14px; background: #2a1820; border: 1px solid #e07a68; font-size: 18px; opacity: 0; transition: 0.4s ease; }
+  .verdict.show { opacity: 1; }
+</style>
+</head>
+<body>
+<header>
+  <h1>organoid-ops</h1>
+  <p>Same plate. Same clock. A different protocol is a different experiment.</p>
+</header>
+<section class="runs">
+  <article>
+    <h2>run-14</h2>
+    <div class="meta">protocol-3 · day 56 · 10:30</div>
+    <div class="plate"><div class="well on">A1</div><div class="well on">A2</div><div class="well"></div><div class="well"></div><div class="well"></div><div class="well"></div><div class="well"></div><div class="well"></div></div>
+  </article>
+  <article id="right">
+    <h2>run-15</h2>
+    <div class="meta" id="proto">protocol-3 · day 56 · 10:30</div>
+    <div class="plate"><div class="well on">A1</div><div class="well on">A2</div><div class="well"></div><div class="well"></div><div class="well"></div><div class="well"></div><div class="well"></div><div class="well"></div></div>
+  </article>
+</section>
+<div class="verdict" id="verdict">Not comparable: protocol. A result file with no run id is rejected.</div>
+<script>
+const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+async function play() {
+  await wait(1000);
+  document.getElementById("proto").textContent = "protocol-3.1 · day 56 · 10:30";
+  document.getElementById("right").classList.add("bad");
+  await wait(600);
+  document.getElementById("verdict").classList.add("show");
+}
+</script>
+</body>
+</html>
